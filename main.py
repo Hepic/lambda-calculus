@@ -12,7 +12,7 @@ def print_boolean(func):
     print func(True)(False)
 
 def main():
-    print_number(ar._sub(ar._10)(ar._5))
+    print_number(ar._factorial(ar._4))
 
 if __name__ == "__main__":
     main()

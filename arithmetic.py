@@ -1,6 +1,6 @@
 import pair as pr
 
-_0 = lambda f: lambda x: x    
+_0 = lambda f: lambda x: x 
 
 _succ = lambda n: lambda f: lambda x: f(n(f)(x)) 
 _1 = _succ(_0)
@@ -13,6 +13,8 @@ _pred = lambda n: n(_pred_pair)(pr._pair(_0)(_0))(pr._fir)
 _sub = lambda n1: lambda n2: n2(_pred)(n1)
 _sum_pair = lambda x: pr._pair(_succ(x(pr._fir)))(_add(x(pr._fir))(x(pr._sec)))
 _sum = lambda n: n(_sum_pair)(pr._pair(_1)(_0))(pr._sec)
+_mult_pair = lambda x: pr._pair(_succ(x(pr._fir)))(_mult(x(pr._fir))(x(pr._sec)))
+_factorial = lambda n: n(_mult_pair)(pr._pair(_1)(_1))(pr._sec)
 
 _2 = _succ(_1)
 _3 = _succ(_2)
