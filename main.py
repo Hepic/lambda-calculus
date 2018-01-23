@@ -12,8 +12,7 @@ def print_boolean(func):
     print func(True)(False)
 
 def main():
-    num = ar._sub(ar._3)(ar._5)
-    print_number(num)
+    print_number(ar._sub(ar._10)(ar._5))
 
 if __name__ == "__main__":
     main()
