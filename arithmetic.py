@@ -1,3 +1,5 @@
+import pair as pr
+
 _0 = lambda f: lambda x: x    
 
 _succ = lambda n: lambda f: lambda x: f(n(f)(x)) 
@@ -7,8 +9,9 @@ _add = lambda n1: lambda n2: n2(_succ)(n1)
 _mult = lambda n1: lambda n2: n2(_add(n1))(_0)
 #_exp = lambda n1: lambda n2: n2(n1)
 _exp = lambda n1: lambda n2: n2(_mult(n1))(_1)
-#pred = lambda n: _0, _1 
-
+_shift_pair = lambda x: pr._pair(x(pr._sec))(_succ(x(pr._sec)))
+_pred = lambda n: (n(_shift_pair)(pr._pair(_0)(_0)))(pr._fir)
+_sub = lambda n1: lambda n2: n2(_pred)(n1)
 
 _2 = _succ(_1)
 _3 = _succ(_2)

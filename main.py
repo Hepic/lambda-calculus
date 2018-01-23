@@ -1,18 +1,19 @@
 import arithmetic as ar
-import boolean as b
+import boolean as bl
+import pair as pr
 
 def increase(x):
     return x + 1
 
 def print_number(func):
-    return func(increase)(0)
+    print func(increase)(0)
 
 def print_boolean(func):
-    return func(True)(False)
-
+    print func(True)(False)
 
 def main():
-    print print_boolean(b._is_zero(ar._0))
+    num = ar._sub(ar._3)(ar._5)
+    print_number(num)
 
 if __name__ == "__main__":
     main()
